@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 public class Hybrid {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		File file = new File("E:\\Exp.xlsx");
+		File file = new File("Exp.xlsx");
 		FileInputStream inputfile = new FileInputStream(file);
 		Workbook Project = new XSSFWorkbook(inputfile);
 		Sheet sheet = Project.getSheet("Sheet1");
@@ -27,7 +27,7 @@ public class Hybrid {
 			System.setProperty("webdriver.chrome.driver",
 				"C:\\QA\\SourceLead\\SeleniumJar\\chromedriver_win32\\chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
-			String URL = sheet.getRow(1).getCell(2).getStringCellValue();
+			String URL = sheet.getRow(1).getCell(3).getStringCellValue();
 			driver.get(URL);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
